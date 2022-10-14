@@ -2,14 +2,14 @@ package de.officeryoda.Commands.Quiz;
 
 import de.officeryoda.Commands.Quiz.structure.Question;
 import de.officeryoda.Inquizitor;
-import de.officeryoda.api.dcbcr.Commands.Managment.CommandRegistrator;
-import de.officeryoda.api.dcbcr.Commands.Managment.PrivateBotCommand;
-import de.officeryoda.api.dcbcr.Commands.Managment.PublicBotCommand;
+import de.officeryoda.dcbcr.CommandData.PrivateBotCommand;
+import de.officeryoda.dcbcr.CommandData.PublicBotCommand;
+import de.officeryoda.dcbcr.Managment.CommandExecuter;
 import net.dv8tion.jda.api.EmbedBuilder;
 
 import java.awt.*;
 
-public class QuizCommands extends CommandRegistrator {
+public class QuizCommands implements CommandExecuter {
 
     Inquizitor inquizitor = Inquizitor.INSTANCE;
     QuizManager quizManager = Inquizitor.INSTANCE.getQuizManager();
