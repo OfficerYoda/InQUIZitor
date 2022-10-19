@@ -1,7 +1,7 @@
 package de.officeryoda;
 
-import de.officeryoda.Commands.Quiz.QuizCommands;
-import de.officeryoda.Commands.Quiz.QuizManager;
+import de.officeryoda.Quiz.Commands.QuizCommands;
+import de.officeryoda.Quiz.QuizManager;
 import de.officeryoda.Listeners.ReadyListener;
 import de.officeryoda.dcbcr.Managment.CommandRegistrator;
 import net.dv8tion.jda.api.JDA;
@@ -39,14 +39,14 @@ public class Inquizitor {
         // Listener setup
         builder.addEventListeners(new ReadyListener());
 
-        jda = builder.build().awaitReady();
-
         quizManager = new QuizManager();
 
         // register Commands
         CommandRegistrator commandRegistrator = new CommandRegistrator(builder, TOKENS.PREFIX);
         commandRegistrator.registerPingCommand();
         commandRegistrator.registerClass(new QuizCommands());
+
+        jda = builder.build().awaitReady();
     }
 
     public QuizManager getQuizManager() {
