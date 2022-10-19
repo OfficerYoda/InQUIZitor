@@ -16,7 +16,6 @@ import java.util.Map;
 
 public class QuizCommands implements CommandExecuter {
 
-    Inquizitor inquizitor = Inquizitor.INSTANCE;
     QuizManager quizManager = Inquizitor.INSTANCE.getQuizManager();
 
     @Override
@@ -129,7 +128,7 @@ public class QuizCommands implements CommandExecuter {
         embed.addField("Solution", question.getSolution() + "", false);
         embed.addField("Answers", answerString.toString(), false);
 
-        botCommand.getChannel().sendMessageEmbeds(embed.build()).queue();
+        botCommand.sendEmbeds(embed.build());
     }
 
     private boolean isQuizzing() {

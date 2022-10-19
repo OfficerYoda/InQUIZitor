@@ -17,6 +17,7 @@ public class Quiz {
 
     public boolean startQuiz() {
         if(quizzing) return false;
+
         quizzing = true;
 
         return true;
@@ -24,7 +25,9 @@ public class Quiz {
 
     public boolean endQuiz() {
         if(!quizzing) return false;
+
         quizzing = false;
+        currentQuestion = null;
 
         return true;
     }
